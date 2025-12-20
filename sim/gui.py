@@ -119,7 +119,7 @@ class TextInput(Element):
                 
             else:
                 temp = self.value + event.unicode
-                print(temp)
+                #print(temp)
                 self.value = temp
             self.data[self.key] = self.value
             self.shapes.append(self.value)
@@ -140,7 +140,7 @@ class NumInput(TextInput):
                 
             else:
                 temp = self.value + event.unicode
-                print(temp)
+                #print(temp)
                 if self.kind == int:
                     if temp.isnumeric() and temp:
                         if int(temp) <= self.highLim:
