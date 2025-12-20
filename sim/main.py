@@ -251,7 +251,7 @@ def draw_polygon(polygon, body, fixture):
 polygonShape.draw = draw_polygon
 
 
-def makeParticles(group, box, world, vmean=1, vspread=0.25, particles=[], max_tries=50):
+def makeParticles(group, box, world, vmean=1, vspread=0.25, particles=[], max_tries=200):
     """Create the specified number of particles within the specified box"""
     num = group.num
     n = 0

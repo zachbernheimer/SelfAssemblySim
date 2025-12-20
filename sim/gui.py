@@ -189,10 +189,10 @@ class GroupInput(Element):
         
         elements = [
             Label(pos, height=height, size=24, text=str(groupID), fontColor=self.color),
-            TextInput((cols[1],inputY),inputWidth, inputHeight, key="radius", value="0.5", data=self.internalData),
-            TextInput((cols[2],inputY),inputWidth, inputHeight, key="mass", value="1", data=self.internalData),
+            NumInput((cols[1],inputY),inputWidth, inputHeight, key="radius", value="0.5", kind=float, highLim=10, data=self.internalData),
+            NumInput((cols[2],inputY),inputWidth, inputHeight, key="mass", value="1", kind=float, highLim=100, data=self.internalData),
             TextInput((cols[3],inputY),inputWidth, inputHeight, key="connections", value=str(self.groupID), data=self.internalData),
-            TextInput((self.width - inputWidth,inputY),inputWidth, inputHeight, key="num", value="400", data=self.internalData)
+            NumInput((self.width - inputWidth,inputY),inputWidth, inputHeight, key="num", value="400", kind=int, highLim=5000, data=self.internalData)
             ]
         
         
@@ -207,7 +207,14 @@ class GroupInput(Element):
     def getData(self):
         rad = float(self.internalData["radius"])
         m = float(self.internalData["mass"])
-        connections = [int(c) for c in self.internalData["connections"].split(",")]
+        conarr = self.internalData["connections"].split(",")
+        connections = []
+        for c in range(len(conarr)):
+            try:
+                temp = int(conarr[c])
+                connections.append(temp)
+            except:
+                print("Invalid connection string: '{}'".format(conarr[c]))
         
         n = int(self.internalData["num"])
         

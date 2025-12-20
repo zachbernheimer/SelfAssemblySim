@@ -24,11 +24,14 @@ Each particle group has an integer ID, which is used to set the connections of e
 ### Interactions
 When two particles collide, the program checks if their respective groups can interact. If so, a bond is formed between the two particles. At every timestep, we use a random number generator to determine if the bond should break, based on the dissociation rate provided in the menu, in units of % chance of dissociation per second. A 0 in this field means the bonds never dissociate, and the field is capped at 99 to prevent a math error in the equation which processes this value.
 
+* Leave the interactions field blank for a non-interacting particle
+
 The Bond cooldown field controls how long after a bond breaks it must wait to reform. This doesn't prevent the particles from forming new bonds with other particles in the same viscinity.
 
 Bonds are modeled as distance joints in Box2D, which have a fixed distance but free to rotate. If the "Allow bond rotation" button is active, the particles are connected from their respective centers, which means nothing prevents them from spinning around each other. When this button is off, the joint is instead made at the contact point, and the particles are allowed to collide with each other. This prevents rolling and rotation but leads to some weird collision behavior when the joint is stiff, and I would look for a better way to accomplish this in the future, perhaps through a combination of the two joints with collisions dissabled.
 
 If the bond stiffness field is greater than zero, the joints are modeled as springs with the specified characteristic frequency. I recommend using a relatively high stiffness to start. This is meant to allow a degree of freedom in NP motion which would represent the bonding and debonding of dozens or hundreds of DNA linkers, as well as chain uncoiling and recoiling.
+
 
 ### Temperature
 The "Temp analog" field is not actually representative of the system temperature. Instead, it sets the average magnitude of a force which is applied in a random direction to each particle at every timestep. This is a very rough approximation of brownian motion. The goal is to ensure the particels always have enough energy to move around if they aren't bonded.
