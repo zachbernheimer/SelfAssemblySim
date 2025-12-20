@@ -40,7 +40,7 @@ This lets you apply an acceleration to all the particles. This is very good for 
 
 ## Example Parameters
 ### Tips
-One factor that limits the effectiveness of the 2D simulation is that for real NP assembly, the third dimension allows particles to be much more mobile. In the 2D simulation, particles can more easily become trapped in unfavorable positions. While this occurs in 3D assembly as well, it can be trickier to anneal the crystal structure in the 2D simulation because particles simply have fewer degrees of freedom. In complex systems, this often leads to small regions which have the predicted structure scattered within an amorphous region. Playing with variables such as temperature, bond stiffness, gravity, dissociation rate, cooldown, and the "allow bond rotation" button while the simulation is running can help vary the mobility of atoms within the crystal. If you don't see the structure you expect right away, try 
+One factor that limits the effectiveness of the 2D simulation is that for real NP assembly, the third dimension allows particles to be much more mobile. In the 2D simulation, particles can more easily become trapped in unfavorable positions. While this occurs in 3D assembly as well, it can be trickier to anneal the crystal structure in the 2D simulation because particles simply have fewer degrees of freedom. In complex systems, this often leads to small regions which have the predicted structure scattered within an amorphous region. Playing with variables such as temperature, bond stiffness, gravity, dissociation rate, cooldown, and the "allow bond rotation" button while the simulation is running can help tune the resulting structure.
 
 ### Self-complementary NPs
 This is the default configuration of the simulation on startup. You can add multiple groups of self-interacting particles with different properties to see how they form different regions within the crystal. A system of identicle self-interacting particles will form a hexagonal crystal lattice as pictured below, which is the close-packed lattice for 2D particles.
@@ -55,6 +55,9 @@ I've found that with the settings in the following image, by letting the simulat
 ![Failed to display image](https://github.com/zachbernheimer/SelfAssemblySim/blob/main/images/binary.png)
 
 ### Binary NPs - different radii
+This system demonstrates the impact of radius ratio on the crystal structure of the system. For the equal radii system above, there were multiple stable lattice configurations, but in this version the size constraints lead to a single stable geometry, revealing the distinct crystal facets seen in the image below.
+![Failed to display image](https://github.com/zachbernheimer/SelfAssemblySim/blob/main/images/binary%20two%20size.png)
+
 
 ## Future notes
 If I work on this project again, I would want to add:
@@ -65,7 +68,7 @@ If I work on this project again, I would want to add:
 * Seed crystals/facets
 
 ## Warnings
-This was written quickly, so some things like proper input verification for the particle group inputs were neglected. Invalid inputs here could crash the program. For the other inputs (which are updated live insted of on sim reset) there is basic input validation. If you find you can't type a specific number into a given input feild, 
+This was developed in a relatively short period of time, so some things like proper input verification for the particle group inputs were neglected. Invalid inputs here could crash the program. For the other inputs (which are updated live insted of on sim reset) there is basic input validation. If you find you can't type a specific number into a given input field, 
 try a lower value, as some have upper limits to prevent crashes which are not clearly labeled in the menu yet.
 
 ## Acknowledgements
