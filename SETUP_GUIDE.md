@@ -48,7 +48,7 @@ git clone https://github.com/zachbernheimer/SelfAssemblySim.git
 ```
 
 ## Run the program
-Navigate to the source directory and run `main.py`
+Navigate to the `sim` directory and run `main.py`
 
 ### On Unix/macOS:
 ```
@@ -61,6 +61,11 @@ python main.py
 cd SelfAssemblySim\sim
 py main.py
 ```
+If you downloaded the project as a Zip archive and decompressed it, you may need to adjust the `cd` command to accommodate the file structure on your system. In my case, I extracted the archive by right-clicking, selecting "Extract All..." and then pressing the Enter key to accept the default location. This extracts the Zip file to a folder with the same name in the current directory, so I used the following command before running `main.py`:
+```
+cd SelfAssemblySim-main\SelfAssemblySim-main\sim
+```
+Just make sure you have the right path to the sim folder and you'll be good to go!
 
 ## Example Parameters
 Once you have the program running, here are some parameters you can try out!
