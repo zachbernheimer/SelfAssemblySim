@@ -30,7 +30,7 @@ git clone https://github.com/zachbernheimer/SelfAssemblySim.git
 ## Run the program
 Navigate to the project dierectory:
 ```
-cd SelfAssemblySim
+cd SelfAssemblySim/sim/
 ```
 Run the main.py program:
 ```
