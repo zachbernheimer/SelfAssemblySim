@@ -23,7 +23,7 @@ source ./simenv/bin/activate        # activate the environment
 mkdir "C:\\path\to\project\directory"   # create the project directory
 cd "C:\\path\to\project\directiory"     # enter the project directory
 py -m venv simenv                       # create the virtual environment
-./simenv/bin/activate                   # activate the environment
+.\simenv\Scripts\activate               # activate the environment
 ```
 
 You can deactivate the virtual environment with the command `deactivate`. Remember to reactivate it the next time you want to use the simulation!
