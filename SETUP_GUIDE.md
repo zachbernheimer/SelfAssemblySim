@@ -3,7 +3,33 @@ This page will walk you through the steps to get the simulation up and running, 
 
 Currently, some basic knowledge of installing and running python packages and programs is recommended – this guide assumes you know what a command line is and already have python installed on your computer.
 
-These instructions are primarily designed for a Unix command line such as those found on Linux or MacOS. They may not work in Command Prompt on a Windows system.
+## Optional - Create a Virtual Environment
+I recommend creating a virtual environment with venv (built in for python version ≥ 3.3) to keep this project from interfering with your other python environments. Due to package source issues discussed later, I do not suggest using Anaconda in this instance.
+
+=== "Unix/macOS"
+    Open the terminal or command line. Then, create and navigate to the folder where you will store the project:
+    ``` bash
+    mkdir /path/to/project/directory    # create the project directory
+    cd /path/to/project/directiory/     # enter the project directory
+    ```
+    Next, create and activate the virtual environment
+    ``` bash
+    python -m venv simenv           # create the virtual environment
+    source ./simenv/bin/activate    # activate the environment
+    ```
+
+=== "Windows"
+    Open the command prompt. You may need to select "run as administrator" to complete the setup. Then, create and navigate to the folder where you will store the project:
+    ``` bat
+    mkdir "C:\\path\to\project\directory"   # create the project directory
+    cd "C:\\path\to\project\directiory"     # enter the project directory
+    ```
+    Next, create and activate the virtual environment
+    ``` bat
+    py -m venv simenv       # create the virtual environment
+    ./simenv/bin/activate   # activate the environment
+    ```
+
 
 ## Install Dependencies
 Python packages:
@@ -22,7 +48,6 @@ If you use Anaconda to manage your python environments, note that as of Dec 2025
 Copy the files in this repository to your own computer, either with the download button on github or, if you have git on your computer, with the following command:
 
 ```
-cd /path/to/your/directory/
 git clone https://github.com/zachbernheimer/SelfAssemblySim.git
 ```
 
