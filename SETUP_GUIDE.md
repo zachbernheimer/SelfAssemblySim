@@ -1,14 +1,14 @@
 # Getting Started
 This page will walk you through the steps to get the simulation up and running, and provide some suggestions for parameters to try out.
 
-Some basic knowledge of installing and running python packages and programs is recommended – this guide assumes you know what a command line is and already have python installed on your computer. This program was developed on Python 3.13.11, but any moderately recent version should work so long as all the dependencies install.
+If you do not have Python installed, you can download it [here](https://www.python.org/downloads/). There are many good tutorials available online to get you started. You don't have to know Python code to use this program, you just need to have the interpreter installed.
+
+This program was developed on Python 3.13.11, but any moderately recent version should work so long as all the dependencies install.
 
 ## Create the Environment
 I recommend creating a virtual environment with venv (built in for python version ≥ 3.3) to keep this project from interfering with your other python environments. If you use Anaconda to manage your python environments, note that as of Dec 2025, I was unable to install box2d from the condaforge channel, so I used pip instead. Due to this issue, I do not suggest using Anaconda in this instance.
 
-Open the terminal or command prompt. On Windows, you may need to select "run as administrator" to complete the setup.
-
-Create and navigate to the folder where you will store the project, then create and activate the virtual environment.
+Open the terminal or command prompt. Create and navigate to the folder where you will store the project, then create and activate the virtual environment.
 
 ### On Unix/macOS:
 ```
