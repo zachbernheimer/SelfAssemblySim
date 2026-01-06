@@ -297,7 +297,7 @@ class GUI():
         self.leftAlign=leftAlign
         
         # row 1: dissociation rate
-        self.addElement(NumInput((rightAlign-numInputWidth, rowy[0]), numInputWidth, rowHeight, key="dissocRate", value="15", highLim=100, kind=float, data=self.inputVars))
+        self.addElement(NumInput((rightAlign-numInputWidth, rowy[0]), numInputWidth, rowHeight, key="dissocRate", value="15", highLim=99.9, kind=float, data=self.inputVars))
         self.addElement(Label((leftAlign, rowy[0]), height=rowHeight, size=20, text="Dissociation rate (%/s):"))
         
         # row 2: joint cooldown

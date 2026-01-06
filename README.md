@@ -1,13 +1,7 @@
 # SelfAssemblySim
 Simplified 2D DNA nanoparticle self-assembly simulator
 
-**Check out the "Example Parameters" section at the end of this page for help getting started!**
-
-## Required Libraries
-pybox2d: "pip install box2d"
-* condaforge source broken at time of writing, use pip package
-
-pygame: "conda/pip install pygame"
+This page contains a detailed explaination of various aspects and operation principles of the simulation program. Check out [this quickstart guide](https://github.com/zachbernheimer/SelfAssemblySim/blob/main/SETUP_GUIDE.md) for help getting started!
 
 ## About This Project
 This program was created as a learning tool to help students explore DNA nanoparticle self-assembly in a simplified 2D environment. The simulation demonstrates how complex crystal structures can spontenously arise from simple rules and conditions. The inspiration for this project was [this paper](https://doi.org/10.1126/science.1210493) by Robert Macfarlane et. al.
@@ -41,26 +35,8 @@ Unlike in real life, this "temperature" DOES NOT EFFECT the rate of bond dissoci
 ### Gravity
 This lets you apply an acceleration to all the particles. This is very good for getting a dense hexagonal lattice, but can crush the less entropically stable lattices that don't align with regular sphere packings. 
 
-## Example Parameters
 ### Tips
 One factor that limits the effectiveness of the 2D simulation is that for real NP assembly, the third dimension allows particles to be much more mobile. In the 2D simulation, particles can more easily become trapped in unfavorable positions. While this occurs in 3D assembly as well, it can be trickier to anneal the crystal structure in the 2D simulation because particles simply have fewer degrees of freedom. In complex systems, this often leads to small regions which have the predicted structure scattered within an amorphous region. Playing with variables such as temperature, bond stiffness, gravity, dissociation rate, cooldown, and the "allow bond rotation" button while the simulation is running can help tune the resulting structure.
-
-### Self-complementary NPs
-This is the default configuration of the simulation on startup. You can add multiple groups of self-interacting particles with different properties to see how they form different regions within the crystal. A system of identicle self-interacting particles will form a hexagonal crystal lattice as pictured below, which is the close-packed lattice for 2D particles.
-
-![Failed to display image](https://github.com/zachbernheimer/SelfAssemblySim/blob/main/images/self-interacting.png)
-
-### Binary NPs - equal radii
-Getting this simulation to produce the expected crystal structure is tricky because – unlike the 3D system, which has only one expected lattice configuration (BCC) – this 2D system has several lattices which are essentially equivalent, rotated versions of the expected square lattice. Following the rule that NPs maximize the number of possible connections, in a 2D world of binary NPs each particle should have 4 connecteions and be arranged in an alternating grid. However, the same number of connections is also achieved by hexagonally packed layers of NPs with alternating types, which actually form an orthorhombic lattice. When an external driving force such as gravity is applied, the lattice where the spheres are close-packed becomes favored, but without gravity we see both structures throughout the simulation. The possiblility for mutliple equivalent lattices makes it difficult to judge the actual structure of the material.
-
-I've found that with the settings in the following image, by letting the simulation run with bond rotation enabled for a minute or so and then disabling bond rotation, I am able to see the lattice more clearly. This is likely because bond rotation makes the particles more mobile, which allows them to form the maximum possible connections, but also allowing the lattice to squish and deform, meaning it is constantly transitioning from square to orthorhombic and back. Disabling bond rotation forces the particles to space themselves out further and maintain a consistent angle to each other, making the lattice more easily visible. 
-
-![Failed to display image](https://github.com/zachbernheimer/SelfAssemblySim/blob/main/images/binary.png)
-
-### Binary NPs - different radii
-This system demonstrates the impact of radius ratio on the crystal structure of the system. For the equal radii system above, there were multiple stable lattice configurations, but in this version the size constraints lead to a single stable geometry, revealing the distinct crystal facets seen in the image below.
-![Failed to display image](https://github.com/zachbernheimer/SelfAssemblySim/blob/main/images/binary%20two%20size.png)
-
 
 ## Future notes
 If I work on this project again, I would want to add:
