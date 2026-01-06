@@ -12,9 +12,10 @@ Python packages:
 This program was developed on Python 3.13.11, but any moderately recent python environment should work so long as all the dependencies install.
 
 You can install the required packages with the following command:
-`pip install box2d`
-`pip install pygame`
-
+```
+pip install box2d
+pip install pygame
+```
 If you use Anaconda to manage your python environments, note that as of Dec 2025, I was unable to install box2d from the condaforge channel, so I used pip instead. However, pygame may be installed via `conda install pygame` instead of pip if desired.
 
 ## Clone the Repository
@@ -28,10 +29,13 @@ git clone https://github.com/zachbernheimer/SelfAssemblySim.git
 
 ## Run the program
 Navigate to the project dierectory:
-`cd SelfAssemblySim`
-
+```
+cd SelfAssemblySim
+```
 Run the main.py program:
-`python main.py`
+```
+python main.py
+```
 
 
 ## Example Parameters
